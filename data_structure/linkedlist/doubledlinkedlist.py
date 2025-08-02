@@ -13,12 +13,12 @@ class DoublyLinkedList: #이중연결리스트 클래스
         return self.length
 
     def appendleft(self, data): #왼쪽에 삽입
-        new_node = Node(data)
+        new_node = Node(data) #새 노드 생성
         if self.head: # 노드가 하나라도 있다면
-            self.head.prev = new_node
-            new_node.next = self.head
-        self.head = new_node
-        self.length += 1
+            self.head.prev = new_node #헤드 노드의 전 노드를 새 노드로 설정
+            new_node.next = self.head #새 노드의 다음 노드를 헤드 노드로 설정
+        self.head = new_node # 헤드 업데이트 
+        self.length += 1 # 길이 1 증가
 
     def append(self, data):
         new_node = Node(data)
