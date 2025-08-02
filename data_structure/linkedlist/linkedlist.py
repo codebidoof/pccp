@@ -3,6 +3,7 @@ class Node:
         self.data = data
  
         self.next = None
+
 # 대원칙 : 삽입위치의 뒤를 먼저 연결하고, 그다음 삽입위치의 앞을 연결한다.
 # 연결 리스트 클래스 만들기
 class LinkedList:
@@ -42,7 +43,7 @@ class LinkedList:
             temp = temp.next
         return res
 
-    def __contains__(self, target): #값이 포함되어있는지 확인하는 메서드
+    def __contains__(self, target): # 값이 포함되어있는지 확인하는 메서드
         if self.head is None: #공백일 경우
             return False
         temp = self.head 
@@ -52,61 +53,62 @@ class LinkedList:
             temp = temp.next
         return False
     
-    def popleft(self): #왼쪽에서 삭제
-        if self.head is None:
-            return None
-        temp = self.head
-        self.head = self.head.next
-        self.length -= 1
-        return temp.data
+    # def popleft(self): #왼쪽에서 삭제
+    #     if self.head is None:
+    #         return None
+    #     temp = self.head
+    #     self.head = self.head.next
+    #     self.length -= 1
+    #     return temp.data
     
-    def pop(self): #오른쪽에서 삭제
-        if self.head is None:
-            return None
-        temp = self.head
-        while temp.next is not None:
-            prev = temp
-            temp = temp.next
-        if temp == self.head:
-            self.head = None
-        else:
-            prev.next = None
-        self.length -= 1
-        return temp.data
+    # def pop(self): #오른쪽에서 삭제
+    #     if self.head is None:
+    #         return None
+    #     temp = self.head
+    #     while temp.next is not None:
+    #         prev = temp
+    #         temp = temp.next
+    #     if temp == self.head:
+    #         self.head = None
+    #     else:
+    #         prev.next = None
+    #     self.length -= 1
+    #     return temp.data
     
     def remove(self, target): # 특정 노드 삭제
         temp = self.head
-        while temp is not None and temp.data != target:
+        while temp is not None and temp.data != target: # 리스트의 끝까지 이동하지 않았고 탐색한 데이터가 타겟과 다른 경우
             prev = temp
             temp = temp.next
-        if temp is None:
+        if temp is None: #끝까지 탐색했는데 해당노드가 없을 경우
             return False
         if temp == self.head: #삭제할 노드가 head인 경우
             self.head = self.head.next
         else:
-            prev.next = temp.next
+            prev.next = temp.next #건뛰
         self.length -= 1
         return True
     
     def insert(self, i, data): #특정 위치(i)에 데이터를 삽입
+        #인덱스 오버 대비
         if i <= 0:
             self.appendleft(data)
         elif i >= self.length:
             self.append(data)
         else:
             temp = self.head
-            for _ in range(i-1):
-                temp = temp.next
-            new_node = Node(data)
-            new_node.next = temp.next
-            temp.next = new_node
+            for _ in range(i-1): #삽입위치 전까지 이동
+                temp = temp.next 
+            new_node = Node(data) 
+            new_node.next = temp.next #뒤를 연결하고
+            temp.next = new_node #앞을 연결한다
         self.length += 1
 
     def reverse(self): #연결리스트 뒤집기
         if self.length < 2:
             return
         p = self.head
-        q = None
+        q = None # 추후 뒤집힌 리스트의 헤드 
         r = None
 
         # 리스트의 첫 번째 노드부터 링크를 따라 다음 노드로 이동하면서 노드 간의 연결을 바꿈

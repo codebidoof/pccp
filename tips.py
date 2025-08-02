@@ -76,3 +76,13 @@ print(squares) #[0, 1, 4, 9, 16]
 
 numbers = [x if x%2==0 else -x for x in range(5)] #조건 표현식과 리스트 컴프리헨션의 조합
 print(numbers) #[0, -1, 2, -3, 4]
+
+#enumerate() -> 반복문에서 인덱스와 값을 동시에 꺼낼 때!
+def solution(wallpaper): #바탕화면 정리 문제
+    x, y = [], [] 
+    for i, row in enumerate(wallpaper):
+        for j, col in enumerate(row):
+            if col == '#':
+                x.append(i)
+                y.append(j)
+    return [min(x), min(y), max(x)+1, max(y)+1]
