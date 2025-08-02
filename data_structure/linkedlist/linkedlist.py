@@ -1,15 +1,16 @@
 class Node:
     def __init__(self, data):
         self.data = data
+ 
         self.next = None
-
+# 대원칙 : 삽입위치의 뒤를 먼저 연결하고, 그다음 삽입위치의 앞을 연결한다.
 # 연결 리스트 클래스 만들기
 class LinkedList:
     def __init__(self):
         self.head = None #공백 리스트 생성
         self.length = 0
 
-    def __len__(self): #길이 계산 메서드
+    def __len__(self): # 길이 계산 메서드
         return self.length
     
     def appendleft(self, data): #왼쪽에다 노드삽입

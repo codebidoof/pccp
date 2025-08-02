@@ -71,5 +71,8 @@ print(squares) # [0, 1, 4, 9, 16]
 even_numbers = [x for x in range(5) if x%2==0]
 print(even_numbers) # [0, 2, 4]
 
-squares = list(map(lambda x: x*x, range(5))) # map(함수, iterable 자료형) -> 반환값이 map객체이므로 list()나 tuple()로 감싸야 함
+squares = list(map(lambda x: x*x, range(5))) # map(함수, iterable 자료형) -> 원소에 함수를 하나씩 적용. 반환값이 map객체이므로 list()나 tuple()로 감싸야 함
 print(squares) #[0, 1, 4, 9, 16]
+
+numbers = [x if x%2==0 else -x for x in range(5)] #조건 표현식과 리스트 컴프리헨션의 조합
+print(numbers) #[0, -1, 2, -3, 4]

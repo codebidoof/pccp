@@ -22,14 +22,14 @@ class DoublyLinkedList: #이중연결리스트 클래스
 
     def append(self, data):
         new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
+        if self.head is None: #공백일 경우
+            self.head = new_node # 헤드포인터를 새 노드로
         else:
-            temp = self.head
-            while temp.next:
-                temp = temp.next
-            temp.next = new_node
-            new_node.prev = temp
+            temp = self.head 
+            while temp.next: #다음 노드가 존재할 때까지
+                temp = temp.next # 다음 노드로 이동
+            temp.next = new_node # 현재 노드의 왼쪽 링크 필드에 새 노드 연결
+            new_node.prev = temp 
         self.length += 1
 
     def popleft(self):
