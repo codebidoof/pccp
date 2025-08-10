@@ -7,7 +7,7 @@ head = Node(1)
 head.next = Node(2)
 head.next.next = Node(3)
 
-node = head # 제발 되라....ㅠㅠㅠ
+node = head 
 
 # 연결 리스트의 값 출력하기
 while node: # Node is not None
