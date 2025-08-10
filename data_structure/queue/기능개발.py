@@ -36,6 +36,6 @@ def solution(progresses, speeds):
             count = 1 # 카운트 다시 초기화
             max_day = days_left[i] #기준 변경 
         answer.append(count) # 마지막으로 카운트된 작업들을 함께 배포
-        return answer
+        return answer # 테스트
 
 
