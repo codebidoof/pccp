@@ -38,4 +38,4 @@ def solution(progresses, speeds):
         answer.append(count) # 마지막으로 카운트된 작업들을 함께 배포
         return answer # 테스트
 
-
+#비교용
