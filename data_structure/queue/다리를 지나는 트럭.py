@@ -18,5 +18,25 @@ def solution(bridge_length, weight, truck_weights):
 
 #타인의 풀이 - 브릿지의 길이만큼의 브릿지 리스트를 만듦 -> 트럭 하나하나 각각 시간을 잴 필요가 없다!
 def solution(bridge_length, weight, truck_weights):
-    pass
+    time = 0
+    # 데크(큐)로 변환
+    bridge = deque([0]*bridge_length)
+    truck_weights = deque(truck_weights)
+
+    currentWeight = 0
+    while len(truck_weights) != 0:
+        time += 1
+
+        currentWeight -= bridge.popleft()
+
+        if currentWeight + truck_weights[0] <= weight:
+            currentWeight += truck_weights[0]
+            bridge.append(truck_weights.popleft())
+        else:
+            bridge.append(0)
+
+        time += bridge_length # 후처리
+
+        return time
+
 
