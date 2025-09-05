@@ -1,7 +1,6 @@
 class Node:
     def __init__(self, data):
         self.data = data
- 
         self.next = None
 
 # 대원칙 : 삽입위치의 뒤를 먼저 연결하고, 그다음 삽입위치의 앞을 연결한다.
@@ -53,28 +52,6 @@ class LinkedList:
             temp = temp.next
         return False
     
-    # def popleft(self): #왼쪽에서 삭제
-    #     if self.head is None:
-    #         return None
-    #     temp = self.head
-    #     self.head = self.head.next
-    #     self.length -= 1
-    #     return temp.data
-    
-    # def pop(self): #오른쪽에서 삭제
-    #     if self.head is None:
-    #         return None
-    #     temp = self.head
-    #     while temp.next is not None:
-    #         prev = temp
-    #         temp = temp.next
-    #     if temp == self.head:
-    #         self.head = None
-    #     else:
-    #         prev.next = None
-    #     self.length -= 1
-    #     return temp.data
-    
     def remove(self, target): # 특정 노드 삭제
         temp = self.head
         while temp is not None and temp.data != target: # 리스트의 끝까지 이동하지 않았고 탐색한 데이터가 타겟과 다른 경우
@@ -118,9 +95,6 @@ class LinkedList:
             p = p.next
             q.next = r
         self.head = q
-
-
-
 
 
 if __name__ == "__main__":

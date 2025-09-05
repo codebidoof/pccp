@@ -20,9 +20,9 @@ from collections import deque
 que = deque() 
 que.append(1)
 que.append(2)
-que.append(3)
+que.append(3) # deque([1, 2, 3])
 
-first_item = que.popleft() # deque([1, 2, 3])
+first_item = que.popleft() 
 print(first_item) # 1
 
 que.append(4)
@@ -30,3 +30,15 @@ que.append(5)
 
 first_item = que.popleft()
 print(first_item) # 2
+
+# heapq
+import heapq
+
+heap = []
+
+heapq.heappush(heap, 10)
+heapq.heappush(heap, 5)
+heapq.heappush(heap, 20)
+heapq.heappush(heap, 1)
+
+print(heap)

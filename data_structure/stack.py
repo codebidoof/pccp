@@ -23,3 +23,6 @@ def pop(stack):
         return None
     else:
         return stack.pop()
+    
+a = min(i for i in range(8))
+print(a)

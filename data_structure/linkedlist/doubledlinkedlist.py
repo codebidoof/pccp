@@ -32,32 +32,6 @@ class DoublyLinkedList: #이중연결리스트 클래스
             new_node.prev = temp # 새 노드의 왼쪽 링크필드에 현재 노드 저장
         self.length += 1 #길이 증가
 
-    # def popleft(self): #왼쪽에서 삭제
-    #     if self.head is None:
-    #         return None
-    #     data = self.head.data
-    #     self.head = self.head.next
-    #     if self.head:
-    #         self.head.prev = None
-    #     self.length -= 1
-    #     return data
-
-    # def pop(self):
-    #     if self.head is None:
-    #         return None
-    #     temp = self.head
-    #     if temp.next is None:  
-    #         data = temp.data
-    #         self.head = None
-    #         self.length -= 1
-    #         return data
-    #     while temp.next:
-    #         temp = temp.next
-    #     data = temp.data
-    #     temp.prev.next = None
-    #     self.length -= 1
-    #     return data
-
     def remove(self, target):
         temp = self.head
         while temp and temp.data != target:

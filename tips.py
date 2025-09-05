@@ -28,7 +28,7 @@ print(result)  # 출력: 5
 # random() - 0이상 1미만의 실수인 난수 생성
 # randrange(시작 숫자, 끝 숫자) - 주어진 범위 안에서 정수인 난수 생성(끝 숫자 미포함)
 # randint(시작 숫자, 끝 숫자) - 주어진 범위 안에서 정수인 난수 생성(끝 숫자 포함)
-# shuffle() - 리스트의 요소를 무작위로 섞음. 반환값 x
+# shuffle(itrable) - 리스트의 요소를 무작위로 섞음. 반환값 x
 import random
 my_list = [1, 2, 3, 4, 5]
 random.shuffle(my_list)
@@ -77,7 +77,9 @@ print(squares) #[0, 1, 4, 9, 16]
 numbers = [x if x%2==0 else -x for x in range(5)] #조건 표현식과 리스트 컴프리헨션의 조합
 print(numbers) #[0, -1, 2, -3, 4]
 
-#enumerate() -> 반복문에서 인덱스와 값을 동시에 꺼낼 때!
+# 행렬의 전치
+
+#enumerate(iterable -> 반복문에서 인덱스와 값을 동시에 꺼낼 때!
 def solution(wallpaper): #바탕화면 정리 문제
     x, y = [], [] 
     for i, row in enumerate(wallpaper):
