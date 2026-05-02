@@ -42,7 +42,7 @@ print(solution())               # 출력: 0 (인자가 없으면 0)
 
 def func(*args):
     return args
-print(func(1, 2, 3), type(func(1, 2, 3))) #tuple
+print(func(1, 2, 3), type(func(1, 2, 3))) # (1, 2, 3) <class 'tuple'>
 
 a, b, c = 1, 2, 3
 packed = a, b, c
@@ -52,7 +52,7 @@ print(type(packed)) #tuple
 
 #startswith() - 문자열이 어떤 접두사로 시작하는지 확인하는 메서드(bool 반환)
 a = "Hello world"
-print(a.startswith("Hell")) #True
+print(a.startswith("Hell")) #true
 
 # 리스트.reverse() -> 뒤집기
 
